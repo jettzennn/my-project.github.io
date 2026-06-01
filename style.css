@@ -1,0 +1,204 @@
+/* Import font pixel dan retro dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+    --pink-color: #ff5e97;
+    --yellow-color: #fcd116;
+    --blue-color: #0f4c81;
+    --purple-color: #a855f7;
+    --teal-color: #14b8a6;
+    --black-color: #000000;
+    --white-color: #ffffff;
+}
+
+/* Reset default browser styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #18181b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'VT323', monospace;
+}
+
+/* Container utama mirip layar smartphone wrapper */
+.phone-container {
+    width: 100%;
+    max-width: 420px;
+    height: 92vh;
+    background-color: #065f46;
+    border: 4px solid var(--black-color);
+    box-shadow: 6px 6px 0px 0px var(--black-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 480px) {
+    .phone-container {
+        height: 100vh;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+/* Area Konten Utama */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px 20px; /* Ditambah sedikit padding atas karena tidak ada header */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=600');
+    background-size: cover;
+    background-position: center;
+}
+.main-content::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Hero Elements */
+.hero-section {
+    text-align: center;
+    width: 100%;
+}
+.main-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 22px;
+    color: var(--white-color);
+    text-shadow: 0 4px 0 var(--black-color);
+    text-transform: uppercase;
+}
+.subtitle {
+    font-size: 18px;
+    color: var(--black-color);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.85);
+    display: inline-block;
+    padding: 2px 8px;
+    border: 2px solid var(--black-color);
+    margin-top: 6px;
+}
+
+/* Grid Sosial Media */
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+.social-box {
+    width: 42px;
+    height: 42px;
+    background-color: var(--white-color);
+    border: 3px solid var(--black-color);
+    box-shadow: 3px 3px 0px 0px var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+.social-box:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px var(--black-color);
+}
+
+/* Hover warna sosmed */
+.social-box.gh:hover { background-color: #4078c0; color: white; }
+.social-box.dc:hover { background-color: #5865F2; color: white; }
+.social-box.ig:hover { background-color: var(--pink-color); color: white; }
+.social-box.wa:hover { background-color: #25D366; color: white; }
+.social-box.gm:hover { background-color: #EA4335; color: white; }
+.social-box.tg:hover { background-color: #0088cc; color: white; }
+
+/* JUDUL SECTION SEKARANG DI TENGAH (align-self diganti ke center) */
+.section-pixel-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    color: var(--yellow-color);
+    text-shadow: 0 3px 0 var(--black-color);
+    margin-top: 8px;
+    align-self: center; /* Menggeser komponen ke tengah */
+    background-color: var(--black-color);
+    padding: 4px 10px;
+    border: 2px solid var(--white-color);
+    box-shadow: 3px 3px 0px 0px var(--black-color);
+}
+
+/* List Project */
+.project-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.retro-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 12px 16px;
+    border: 3px solid var(--black-color);
+    box-shadow: 4px 4px 0px 0px var(--black-color);
+    cursor: pointer;
+    transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+.retro-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--black-color);
+}
+
+/* Class Warna Tombol - Tetap utuh siapa pun nama projectnya */
+.btn-pink { background-color: var(--pink-color); color: var(--white-color); }
+.btn-yellow { background-color: var(--yellow-color); color: var(--black-color); }
+.btn-blue { background-color: var(--blue-color); color: var(--white-color); }
+.btn-purple { background-color: var(--purple-color); color: var(--white-color); }
+.btn-teal { background-color: var(--teal-color); color: var(--black-color); }
+
+/* ================= EFEK KLIK PIXEL ================= */
+/* Container utama efek agar posisinya pas di titik sentuhan */
+.pixel-click-effect {
+    position: absolute;
+    pointer-events: none; /* Biar tidak mengganggu klik tombol asli */
+    z-index: 9999;
+    width: 0;
+    height: 0;
+}
+
+/* Karakteristik partikel kotak (Piksel) */
+.pixel-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    box-shadow: 1.5px 1.5px 0px #000000; /* Border bayangan khas retro */
+    animation: pixelBurstAnim 0.4s ease-out forwards;
+}
+
+/* Animasi melesat keluar hancur dan memudar */
+@keyframes pixelBurstAnim {
+    0% {
+        transform: translate(-3px, -3px) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        /* Nilai --x dan --y ini nanti diatur otomatis acak lewat JavaScript */
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
+}
